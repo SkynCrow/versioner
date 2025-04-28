@@ -24,7 +24,7 @@ classifiers = [
 # requests = "^2.28.1"
 
 [project.scripts]
-save = "versioner.commands.save:save"
-deploy = "versioner.commands.deploy:deploy"
-run = "versioner.commands.run:run"
-setup = "versioner.commands.setup:setup"
+save = "versioner.save:save"
+deploy = "versioner.deploy:deploy"
+run = "versioner.run:run"
+setup = "versioner.setup:setup"

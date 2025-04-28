@@ -1,5 +1,5 @@
 import argparse
-from versioner.utils.version_manager import read_version, validate_commit_message, increment_version
+from versioner.utils.version_manager import validate_commit_message, increment_version
 
 def deploy():
     """Despliega el proyecto e incrementa la versión de deploy (minor)."""
