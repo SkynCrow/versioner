@@ -1,7 +1,7 @@
 import sys
 import unittest
 from versioner.commands.deploy import deploy
-from versioner.utils.version_manager import increment_version, read_version  # Replace with the actual function name
+from versioner.tools import increment_version, read_version  # Replace with the actual function name
 
 class TestDeployCommand(unittest.TestCase):
     '''Test the deploy command for expected behavior.'''
