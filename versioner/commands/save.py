@@ -18,8 +18,7 @@ def save():
         if args.upload:
             subprocess.run(["git", "push"], check=True)
         new_version = increment_version("patch")
-        print(f"Versión actualizada a: {new_version}")
-        print("Estado guardado correctamente.")
+        print("Versión actualizada a",GREEN, new_version,RESET)
         return True
     except ValueError as e:
         print(e)
