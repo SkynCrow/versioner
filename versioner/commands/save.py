@@ -13,11 +13,11 @@ def save():
         args = parser.parse_args()
         validate_commit_message(args.message)
         print(f"Guardando el estado del proyecto con el mensaje: '{args.message}'")
+        new_version = increment_version("patch")
         subprocess.run(["git", "add", "."], check=True)
         subprocess.run(["git", "commit", "-m", args.message], check=True)
         if args.upload:
             subprocess.run(["git", "push"], check=True)
-        new_version = increment_version("patch")
         print("Versión actualizada a",GREEN, new_version,RESET)
         return True
     except ValueError as e:

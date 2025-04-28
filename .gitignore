@@ -6,3 +6,6 @@ __pycache__
 *.pyd
 *.egg-info
 *.egg
+build/
+dist/
+*.log

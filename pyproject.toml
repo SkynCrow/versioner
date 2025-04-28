@@ -3,7 +3,7 @@ requires = ["setuptools>=42", "wheel"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "versionator"
+name = "versioner"
 version = "0.1.0"
 description = "A CI/CD base package for Python projects"
 authors = [
