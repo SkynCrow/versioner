@@ -1,6 +1,6 @@
 import sys
 import unittest
-from versioner.commands.deploy import deploy
+from versioner.deploy import deploy
 from versioner.tools import increment_version, read_version  # Replace with the actual function name
 
 class TestDeployCommand(unittest.TestCase):
