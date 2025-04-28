@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "versioner"
-version = "0.1.0"
+version = "1.39.10"
 description = "A CI/CD base package for Python projects"
 authors = [
     { name = "Franco Tardones", email = "ftardones@gmail.com" }

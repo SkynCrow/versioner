@@ -16,6 +16,15 @@ def write_version(version):
     """Escribe la nueva versión en el archivo version.txt."""
     with open(VERSION_FILE, "w",encoding='utf-8') as f:
         f.write(version)
+    # Editamos el toml de la aplicación, y actualizamos la versión
+    with open("pyproject.toml", "r",encoding='utf-8') as f:
+        lines = f.readlines()
+    with open("pyproject.toml", "w",encoding='utf-8') as f:
+        for line in lines:
+            if line.startswith("version = "):
+                f.write(f'version = "{version}"\n')
+            else:
+                f.write(line)
 
 def increment_version(part,write=True):
     """
