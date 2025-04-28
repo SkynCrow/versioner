@@ -2,7 +2,9 @@ import os
 import re
 
 VERSION_FILE = "version.txt"
-
+RED = "\033[91m"
+GREEN = "\033[92m"
+RESET = "\033[0m"
 def read_version():
     """Lee la versión actual del archivo version.txt."""
     if not os.path.exists(VERSION_FILE):

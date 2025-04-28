@@ -1,10 +1,11 @@
 import argparse
 import subprocess
-from versioner.utils.version_manager import read_version, validate_commit_message, increment_version, write_version
+from versioner.utils.version_manager import GREEN, RED, RESET, read_version, validate_commit_message, increment_version, write_version
 
 def save():
     """Guarda el estado del proyecto e incrementa la versión de save (patch)."""
     old_version = read_version()
+    print("Versión actual:",GREEN,old_version,RESET)
     try:
         parser = argparse.ArgumentParser(description="Guarda el estado del proyecto")
         parser.add_argument('--message','-m', required=True, help='Mensaje de commit')
@@ -24,6 +25,6 @@ def save():
         print("Error: Argumentos inválidos.")
         print("Usa --help para ver las opciones disponibles.")
     # Si ocurre un error, revertir a la versión anterior
-    print("Error al guardar el estado del proyecto. Revirtiendo a la versión anterior.")
+    print(f"{RED}Algo fallo. Revirtiendo versión...",GREEN, old_version,RESET)
     write_version(old_version)
     return False
