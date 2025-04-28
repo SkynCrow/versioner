@@ -9,12 +9,14 @@ def save():
     try:
         parser = argparse.ArgumentParser(description="Guarda el estado del proyecto")
         parser.add_argument('--message','-m', required=True, help='Mensaje de commit')
+        parser.add_argument('--upload','-u', action='store_true', help='Sube el commit al repositorio remoto')
         args = parser.parse_args()
         validate_commit_message(args.message)
         print(f"Guardando el estado del proyecto con el mensaje: '{args.message}'")
         subprocess.run(["git", "add", "."], check=True)
         subprocess.run(["git", "commit", "-m", args.message], check=True)
-        subprocess.run(["git", "push"], check=True)
+        if args.upload:
+            subprocess.run(["git", "push"], check=True)
         new_version = increment_version("patch")
         print(f"Versión actualizada a: {new_version}")
         print("Estado guardado correctamente.")
